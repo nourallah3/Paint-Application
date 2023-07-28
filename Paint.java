@@ -45,7 +45,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Pencil.setBackground(c1);
 		Pencil.setActionCommand("Pencil");
 		Pencil.addActionListener(this);
-		CommandPanel.add(Pencil)
+		CommandPanel.add(Pencil);
 		
 		add(BorderLayout.WEST,CommandPanel);
 		
@@ -118,6 +118,14 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			SecondPoint.setLocation(e.getX(),e.getY());
 			paint(g);
 		}
+		if (DrawMode.compareTo("Pencil") == 0){
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				FirstPoint.x=SecondPoint.x;
+				FirstPoint.y=SecondPoint.y;
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(getGraphics());
+		}
 	}
 	public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
@@ -146,6 +154,9 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 				width=Math.abs(SecondPoint.x - FirstPoint.x);
 				height=Math.abs(SecondPoint.y - FirstPoint.y);
 				g.drawRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
+				break;
+			case "Pencil":
+				g.drawLine(FirstPoint.x,FirstPoint.y,SecondPoint.x,SecondPoint.y);
 				break;
 		}
 	}			
