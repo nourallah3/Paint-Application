@@ -61,6 +61,19 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			SecondPoint.setLocation(e.getX(),e.getY());
 			paint(g);
 		}
+		if (DrawMode.compareTo("RectD") == 0){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawRect(TopLeft.x ,TopLeft.y ,width ,height );
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
 	}
 	public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
@@ -71,6 +84,12 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		switch(DrawMode){
 			case "LineD":
 				g.drawLine(FirstPoint.x,FirstPoint.y,SecondPoint.x,SecondPoint.y);
+				break;
+			case "RectD":
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawRect(TopLeft.x ,TopLeft.y ,width ,height );
 				break;
 		}
 	}			
