@@ -33,3 +33,39 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	public void mouseExited(MouseEvent e){}
 	public void mouseMoved(MouseEvent e){}
 	public void mouseClicked(MouseEvent e){}
+	
+	public void mousePressed(MouseEvent e){
+		FirstPoint.setLocation(0,0);
+		SecondPoint.setLocation(0,0);
+		FirstPoint.setLocation(e.getX(),e.getY());
+		
+	}
+	public void mouseReleased(MouseEvent e){
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(getGraphics());
+	}
+	public void mouseDragged(MouseEvent e){
+		if (DrawMode.compareTo("LineD") ==0){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				g.drawLine(FirstPoint.x,FirstPoint.y,SecondPoint.x,SecondPoint.y);
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
+	}
+	public void actionPerformed(ActionEvent e){
+		DrawMode = e.getActionCommand();
+		Graphics g = getGraphics();
+		}
+	public void paint(Graphics g){
+		g.setColor(color);
+		switch(DrawMode){
+			case "LineD":
+				g.drawLine(FirstPoint.x,FirstPoint.y,SecondPoint.x,SecondPoint.y);
+				break;
+		}
+	}			
+}
