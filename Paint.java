@@ -17,3 +17,19 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.setLayout(new GridLayout(15,2,20,20));
 		CommandPanel.setBackground(new Color(223,234,246,255));
 		
+		DrawLine=new JButton(new ImageIcon("Photos\\line.png"));
+		DrawLine.setBackground(c1);
+		DrawLine.setActionCommand("LineD");
+		DrawLine.addActionListener(this);
+		CommandPanel.add(DrawLine);
+		
+		add(BorderLayout.WEST,CommandPanel);
+		
+		addMouseListener(this);
+		addMouseMotionListener(this);
+		
+	}
+	public void mouseEntered(MouseEvent e){}
+	public void mouseExited(MouseEvent e){}
+	public void mouseMoved(MouseEvent e){}
+	public void mouseClicked(MouseEvent e){}
