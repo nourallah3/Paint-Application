@@ -14,7 +14,8 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	Point FirstPoint = new Point(0,0);
 	Point SecondPoint = new Point(0,0);
 	public void init{
-
+		Color c1=new Color(243,247,252,255);
+		
 		setLayout(new BorderLayout());
 		Panel CommandPanel=new Panel();
 		CommandPanel.setLayout(new GridLayout(15,2,20,20));
