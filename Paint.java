@@ -13,7 +13,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	Checkbox Fill;
 	Point FirstPoint = new Point(0,0);
 	Point SecondPoint = new Point(0,0);
-	public void init{
+	public void init(){
 		Color c1=new Color(243,247,252,255);
 		
 		setLayout(new BorderLayout());
@@ -179,7 +179,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.add(Eraser);
 		
 		Clear=new JButton(new ImageIcon("Photos\\delete.png"));
-		Clear.setBackground(c1)
+		Clear.setBackground(c1);
 		Clear.addActionListener(this);
 		CommandPanel.add(Clear);
 		
@@ -339,11 +339,11 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			color=Color.black;
 			repaint();
 		}
-    if(DrawMode.equals("Red")){
+		if(DrawMode.equals("Red")){
 			color=Color.red;
 		}	
 		if(DrawMode.equals("Blue")){
-		color=Color.blue;
+			color=Color.blue;
 		}
 		if(DrawMode.equals("Gray")){
 			color=Color.gray;
@@ -364,42 +364,41 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			color=Color.magenta;
 		}
 		if(DrawMode.equals("DarkRed")){
-			color=Color.new Color(204,0,0);
+			color=new Color(204,0,0);
 		}
 			if(DrawMode.equals("DarkBlue")){
-			color=Color.new Color(0,0,204);
+			color=new Color(0,0,204);
 		}
 		if(DrawMode.equals("LightGreen")){
-			color=Color.new Color(0,255,51);
+			color=new Color(0,255,51);
 		}
 		if(DrawMode.equals("Green")){
 			color=Color.green;
 		}
 		if(DrawMode.equals("Lavender")){
-			color=Color.new Color(230,230,250);
+			color=new Color(230,230,250);
 		}
 		if(DrawMode.equals("Brown")){
-			color=Color.new Color(165,42,42);
+			color=new Color(165,42,42);
 		}
 		if(DrawMode.equals("Teal")){
-			color=Color.new Color(0,128,128);
+			color=new Color(0,128,128);
 		}
 		if(DrawMode.equals("Violet")){
-			color=Color.new Color(138,43,226);
+			color=new Color(138,43,226);
 		}
 		if(DrawMode.equals("DarkViolet")){
-			color=Color.new Color((75,0,130));
+			color=new Color(75,0,130);
 		}
 		if(DrawMode.equals("Wheat")){
-			color=Color.new Color(245,222,179);
+			color=new Color(245,222,179);
 		}
 		if(DrawMode.equals("Olive")){
-			color=Color.new Color((128,128,0));
+			color=new Color(128,128,0);
 		}
 		if(DrawMode.equals("Pink")){
-			color=Color.new Color((255,105,180));
+			color=new Color(255,105,180);
 		}
-	}
 	}
 	public void paint(Graphics g){
 		g.setColor(color);
@@ -432,28 +431,28 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 				g.setColor(Color.WHITE);
 				g.fillRect(FirstPoint.x,FirstPoint.y,10,10);
 				break;
-			if (Fill.getState() == true){
-				switch(DrawMode){
-				case "RectD":
-					Point TopLeft=getTopLeft();
-					int width=Math.abs(SecondPoint.x - FirstPoint.x);
-					int height=Math.abs(SecondPoint.y - FirstPoint.y);
-					g.fillRect(TopLeft.x ,TopLeft.y ,width ,height );
-					break;
-				case "RectRD":
-					TopLeft=getTopLeft();
-					width=Math.abs(SecondPoint.x - FirstPoint.x);
-					height=Math.abs(SecondPoint.y - FirstPoint.y);
-					g.fillRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
-					break;	
-				case "CircleD":
-					TopLeft=getTopLeft();
-					width=Math.abs(SecondPoint.x-FirstPoint.x);
-					height=Math.abs(SecondPoint.y-FirstPoint.y);
-					g.fillOval(TopLeft.x,TopLeft.y,width,height);
+		}
+		if (Fill.getState() == true){
+			switch(DrawMode){
+			case "RectD":
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.fillRect(TopLeft.x ,TopLeft.y ,width ,height );
 				break;
-				
+			case "RectRD":
+				TopLeft=getTopLeft();
+				width=Math.abs(SecondPoint.x - FirstPoint.x);
+				height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.fillRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
+				break;	
+			case "CircleD":
+				TopLeft=getTopLeft();
+				width=Math.abs(SecondPoint.x-FirstPoint.x);
+				height=Math.abs(SecondPoint.y-FirstPoint.y);
+				g.fillOval(TopLeft.x,TopLeft.y,width,height);
+			break;
 			}
 		}
-	}			
-}
+	}
+}			
