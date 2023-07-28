@@ -5,7 +5,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class Paint extends Applet implements ActionListener,MouseListener,MouseMotionListener{
-		JButton Red, Blue , Gray , Violet , DarkViolet , Cyan , Teal ,Orange , Brown, Black , Yellow , Lavender ,  Magenta , DarkRed , DarkBlue , LightGreen , green;
+		JButton Red, Blue , Gray , Wheat,Violet , DarkViolet , Cyan , Teal ,Orange , Brown, Black , Yellow , Lavender ,  Magenta , DarkRed , DarkBlue , LightGreen , green;
 		Color color;
 		String DrawMode = ""
 	public void init(){	
@@ -116,6 +116,13 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	    DarkViolet.addActionListener(this);
 		CommandPanel.add(DarkViolet);
 		
+		Wheat=new JButton();
+		Wheat.setBackground(new Color(245,222,179));
+		Wheat.setActionCommand("Wheat");
+	    Wheat.addActionListener(this);
+		CommandPanel.add(Wheat);
+		
+		
 		public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
 		Graphics g = getGraphics();
@@ -159,17 +166,20 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		if(DrawMode.equals("Lavender")){
 			color=Color.new Color(230,230,250);
 		}
-			if(DrawMode.equals("Brown")){
+		if(DrawMode.equals("Brown")){
 			color=Color.new Color(165,42,42);
 		}
-			if(DrawMode.equals("Teal")){
+		if(DrawMode.equals("Teal")){
 			color=Color.new Color(0,128,128);
 		}
-			if(DrawMode.equals("Violet")){
+		if(DrawMode.equals("Violet")){
 			color=Color.new Color(138,43,226);
 		}
-			if(DrawMode.equals("DarkViolet")){
+		if(DrawMode.equals("DarkViolet")){
 			color=Color.new Color((75,0,130));
+		}
+		if(DrawMode.equals("Wheat")){
+			color=Color.new Color(245,222,179);
 		}
 	}
 	
