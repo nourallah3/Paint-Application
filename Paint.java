@@ -21,6 +21,60 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.setLayout(new GridLayout(15,2,20,20));
 		CommandPanel.setBackground(new Color(223,234,246,255));
 		
+		JPanel Draw=new JPanel();
+		Draw.setBounds(320,10,1100,700);
+		add(Draw,BorderLayout.CENTER);
+		Panel Background=new Panel();
+		Background.setBackground(new Color(202,212,227,255));
+		Background.setBounds(300,200,100,100);
+		add(Background);
+		Background.setLayout(null);
+		
+		Pencil=new JButton(new ImageIcon("Photos\\pencil.png"));
+		Pencil.setBackground(c1);
+		Pencil.setActionCommand("Pencil");
+		Pencil.addActionListener(this);
+		CommandPanel.add(Pencil);
+		
+		Eraser=new JButton(new ImageIcon("Photos\\eraser.png"));
+		Eraser.setBackground(c1);
+		Eraser.setActionCommand("Eraser");
+		Eraser.addActionListener(this);
+		CommandPanel.add(Eraser);
+		
+		Clear=new JButton(new ImageIcon("Photos\\delete.png"));
+		Clear.setBackground(c1);
+		Clear.addActionListener(this);
+		CommandPanel.add(Clear);
+		
+		
+		DrawLine=new JButton(new ImageIcon("Photos\\line.png"));
+		DrawLine.setBackground(c1);
+		DrawLine.setActionCommand("LineD");
+		DrawLine.addActionListener(this);
+		CommandPanel.add(DrawLine);
+		
+		DrawRect=new JButton(new ImageIcon("Photos\\rectangle.png"));
+		DrawRect.setBackground(c1);
+		DrawRect.setActionCommand("RectD");
+		DrawRect.addActionListener(this);
+		CommandPanel.add(DrawRect);
+		
+		DrawRoundRect=new JButton(new ImageIcon("Photos\\roundrect.png"));
+		DrawRoundRect.setBackground(c1);
+		DrawRoundRect.setActionCommand("RectRD");
+		DrawRoundRect.addActionListener(this);
+		CommandPanel.add(DrawRoundRect);
+		
+		DrawCircle=new JButton(new ImageIcon("Photos\\circle.png"));
+		DrawCircle.setBackground(c1);
+		DrawCircle.setActionCommand("CircleD");
+		DrawCircle.addActionListener(this);
+		CommandPanel.add(DrawCircle);
+		
+		
+		Fill=new Checkbox("Fill");
+		CommandPanel.add(Fill);
 
 		Red=new JButton();
 		Red.setBackground(Color.red);	
@@ -141,50 +195,6 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Pink.setActionCommand("Pink");
 	  Pink.addActionListener(this);
 		CommandPanel.add(Pink);
-	
-		DrawLine=new JButton(new ImageIcon("Photos\\line.png"));
-		DrawLine.setBackground(c1);
-		DrawLine.setActionCommand("LineD");
-		DrawLine.addActionListener(this);
-		CommandPanel.add(DrawLine);
-		
-		DrawRect=new JButton(new ImageIcon("Photos\\rectangle.png"));
-		DrawRect.setBackground(c1);
-		DrawRect.setActionCommand("RectD");
-		DrawRect.addActionListener(this);
-		CommandPanel.add(DrawRect);
-		
-		DrawCircle=new JButton(new ImageIcon("Photos\\circle.png"));
-		DrawCircle.setBackground(c1);
-		DrawCircle.setActionCommand("CircleD");
-		DrawCircle.addActionListener(this);
-		CommandPanel.add(DrawCircle);
-		
-		DrawRoundRect=new JButton(new ImageIcon("Photos\\roundrect.png"));
-		DrawRoundRect.setBackground(c1);
-		DrawRoundRect.setActionCommand("RectRD");
-		DrawRoundRect.addActionListener(this);
-		CommandPanel.add(DrawRoundRect);
-		
-		Pencil=new JButton(new ImageIcon("Photos\\pencil.png"));
-		Pencil.setBackground(c1);
-		Pencil.setActionCommand("Pencil");
-		Pencil.addActionListener(this);
-		CommandPanel.add(Pencil);
-		
-		Eraser=new JButton(new ImageIcon("Photos\\eraser.png"));
-		Eraser.setBackground(c1);
-		Eraser.setActionCommand("Eraser");
-		Eraser.addActionListener(this);
-		CommandPanel.add(Eraser);
-		
-		Clear=new JButton(new ImageIcon("Photos\\delete.png"));
-		Clear.setBackground(c1);
-		Clear.addActionListener(this);
-		CommandPanel.add(Clear);
-		
-		Fill=new Checkbox("Fill");
-		CommandPanel.add(Fill);
 		
 		add(BorderLayout.WEST,CommandPanel);
 		
