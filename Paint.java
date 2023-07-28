@@ -53,6 +53,9 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Eraser.addActionListener(this);
 		CommandPanel.add(Eraser);
 		
+		Fill=new Checkbox("Fill");
+		CommandPanel.add(Fill);
+		
 		add(BorderLayout.WEST,CommandPanel);
 		
 		addMouseListener(this);
