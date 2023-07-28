@@ -82,18 +82,36 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Red.addActionListener(this);
 		CommandPanel.add(Red);
 		
+		DarkRed=new JButton();
+		DarkRed.setBackground(new Color(204,0,0));
+		DarkRed.setActionCommand("DarkRed");
+	    DarkRed.addActionListener(this);
+		CommandPanel.add(DarkRed);
+		
+		Brown=new JButton();
+		Brown.setBackground(new Color(165,42,42));
+		Brown.setActionCommand("Brown");
+	  Brown.addActionListener(this);
+		CommandPanel.add(Brown);
+		
+		Wheat=new JButton();
+		Wheat.setBackground(new Color(245,222,179));
+		Wheat.setActionCommand("Wheat");
+	  Wheat.addActionListener(this);
+		CommandPanel.add(Wheat);
+		
 		Blue=new JButton();
 		Blue.setBackground(Color.blue);
 		Blue.setActionCommand("Blue");
 		Blue.addActionListener(this);
 		CommandPanel.add(Blue);
 		
-		Gray=new JButton();
-		Gray.setBackground(Color.gray);	
-		Gray.setActionCommand("Gray");
-		Gray.addActionListener(this);
-		CommandPanel.add(Gray);
-
+		DarkBlue=new JButton();
+		DarkBlue.setBackground(new Color(0,0,204));
+		DarkBlue.setActionCommand("DarkBlue");
+	   DarkBlue.addActionListener(this);
+		CommandPanel.add(DarkBlue);
+		
 		Cyan=new JButton();
 		Cyan.setBackground(Color.cyan);	
 		Cyan.setActionCommand("Cyan");
@@ -105,12 +123,6 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Orange.setActionCommand("Orange");
 		Orange.addActionListener(this);
 		CommandPanel.add(Orange);
-		
-		Black=new JButton();
-		Black.setBackground(Color.black);	
-		Black.setActionCommand("Black");
-		Black.addActionListener(this);
-		CommandPanel.add(Black);
 		
 		Yellow=new JButton();
 		Yellow.setBackground(Color.yellow);	
@@ -124,47 +136,18 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	    Magenta.addActionListener(this);
 		CommandPanel.add(Magenta);
 		
-		DarkRed=new JButton();
-		DarkRed.setBackground(new Color(204,0,0));
-		DarkRed.setActionCommand("DarkRed");
-	    DarkRed.addActionListener(this);
-		CommandPanel.add(DarkRed);
+		Pink=new JButton();
+		Pink.setBackground(new Color(255,105,180));
+		Pink.setActionCommand("Pink");
+	  Pink.addActionListener(this);
+		CommandPanel.add(Pink);
 		
-		DarkBlue=new JButton();
-		DarkBlue.setBackground(new Color(0,0,204));
-		DarkBlue.setActionCommand("DarkBlue");
-	   DarkBlue.addActionListener(this);
-		CommandPanel.add(DarkBlue);
-		
-		LightGreen=new JButton();
-		LightGreen.setBackground(new Color(0,255,51));
-		LightGreen.setActionCommand("LightGreen");
-	   LightGreen.addActionListener(this);
-		CommandPanel.add(LightGreen);
-		
-		Green=new JButton();
-		Green.setBackground(Color.green);	
-		Green.setActionCommand("Green");
-		Green.addActionListener(this);
-		CommandPanel.add(Green);
 		
 		Lavender=new JButton();
 		Lavender.setBackground(new Color(230,230,250));
 		Lavender.setActionCommand("Lavender");
 	  Lavender.addActionListener(this);
 		CommandPanel.add(Lavender);
-		
-		Brown=new JButton();
-		Brown.setBackground(new Color(165,42,42));
-		Brown.setActionCommand("Brown");
-	  Brown.addActionListener(this);
-		CommandPanel.add(Brown);
-		
-		Teal=new JButton();
-		Teal.setBackground(new Color(0,128,128));
-		Teal.setActionCommand("Teal");
-	  Teal.addActionListener(this);
-		CommandPanel.add(Teal);
 		
 		Violet=new JButton();
 		Violet.setBackground(new Color(138,43,226));
@@ -178,11 +161,30 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	  DarkViolet.addActionListener(this);
 		CommandPanel.add(DarkViolet);
 		
-		Wheat=new JButton();
-		Wheat.setBackground(new Color(245,222,179));
-		Wheat.setActionCommand("Wheat");
-	  Wheat.addActionListener(this);
-		CommandPanel.add(Wheat);
+		Black=new JButton();
+		Black.setBackground(Color.black);	
+		Black.setActionCommand("Black");
+		Black.addActionListener(this);
+		CommandPanel.add(Black);
+		
+		Gray=new JButton();
+		Gray.setBackground(Color.gray);	
+		Gray.setActionCommand("Gray");
+		Gray.addActionListener(this);
+		CommandPanel.add(Gray);
+		
+		
+		LightGreen=new JButton();
+		LightGreen.setBackground(new Color(0,255,51));
+		LightGreen.setActionCommand("LightGreen");
+	   LightGreen.addActionListener(this);
+		CommandPanel.add(LightGreen);
+		
+		Green=new JButton();
+		Green.setBackground(Color.green);	
+		Green.setActionCommand("Green");
+		Green.addActionListener(this);
+		CommandPanel.add(Green);
 		
 		Olive=new JButton();
 		Olive.setBackground(new Color(128,128,0));
@@ -190,12 +192,14 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	  Olive.addActionListener(this);
 		CommandPanel.add(Olive);
 		
-		Pink=new JButton();
-		Pink.setBackground(new Color(255,105,180));
-		Pink.setActionCommand("Pink");
-	  Pink.addActionListener(this);
-		CommandPanel.add(Pink);
 		
+		Teal=new JButton();
+		Teal.setBackground(new Color(0,128,128));
+		Teal.setActionCommand("Teal");
+	  Teal.addActionListener(this);
+		CommandPanel.add(Teal);
+		
+	
 		add(BorderLayout.WEST,CommandPanel);
 		
 		addMouseListener(this);
