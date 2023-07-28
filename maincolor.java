@@ -14,5 +14,26 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.setLayout(new GridLayout(15,2,20,20));
 		CommandPanel.setBackground(new Color(223,234,246,255));
 		
-	
+	Red=new JButton();
+		Red.setBackground(Color.red);
+		
+		Red.setActionCommand("Red");
+		
+		Red.addActionListener(this);
+		
+		CommandPanel.add(Red);
+		
+		public void actionPerformed(ActionEvent e){
+		DrawMode = e.getActionCommand();
+		Graphics g = getGraphics();
+		
+		if(DrawMode.equals("Red")){
+			color=Color.red;
+		}
+	}
+
+		
+	public void paint(Graphics g){
+		g.setColor(color);
+	}
 }
