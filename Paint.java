@@ -146,7 +146,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		
 		
 		Lavender=new JButton();
-		Lavender.setBackground(new Color(230,230,250));
+		Lavender.setBackground(new Color(221,160,221));
 		Lavender.setActionCommand("Lavender");
 		Lavender.addActionListener(this);
 		CommandPanel.add(Lavender);
@@ -160,7 +160,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.add(LightGreen);
 		
 		Green=new JButton();
-		Green.setBackground(Color.green);	
+		Green.setBackground(new Color(0,100,0));	
 		Green.setActionCommand("Green");
 		Green.addActionListener(this);
 		CommandPanel.add(Green);
@@ -388,10 +388,10 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			color=new Color(0,255,51);
 		}
 		if(DrawMode.equals("Green")){
-			color=Color.green;
+			color=new Color(0,100,0);
 		}
 		if(DrawMode.equals("Lavender")){
-			color=new Color(230,230,250);
+			color=new Color(221,160,221);
 		}
 		if(DrawMode.equals("Brown")){
 			color=new Color(165,42,42);
