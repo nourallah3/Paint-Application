@@ -99,6 +99,19 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			SecondPoint.setLocation(e.getX(),e.getY());
 			paint(g);
 		}
+		if (DrawMode.compareTo("RectRD") == 0){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
 	}
 	public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
@@ -121,6 +134,12 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 				width=Math.abs(SecondPoint.x-FirstPoint.x);
 				height=Math.abs(SecondPoint.y-FirstPoint.y);
 				g.drawOval(TopLeft.x,TopLeft.y,width,height);
+				break;
+			case "RectRD":
+				TopLeft=getTopLeft();
+				width=Math.abs(SecondPoint.x - FirstPoint.x);
+				height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
 				break;
 		}
 	}			
