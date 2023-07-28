@@ -5,7 +5,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class Paint extends Applet implements ActionListener,MouseListener,MouseMotionListener{
-		JButton Red, Blue , Gray , Cyan , Orange;
+		JButton Red, Blue , Gray , Cyan , Orange , Black;
 		Color color;
 		String DrawMode = ""
 	public void init(){	
@@ -44,6 +44,12 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Orange.addActionListener(this);
 		CommandPanel.add(Orange);
 		
+		Black=new JButton();
+		Black.setBackground(Color.black);	
+		Black.setActionCommand("Black");
+		Black.addActionListener(this);
+		CommandPanel.add(Black);
+		
 		public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
 		Graphics g = getGraphics();
@@ -62,6 +68,9 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		}
 		if(DrawMode.equals("Orange")){
 			color=Color.orange;
+		}
+		if(DrawMode.equals("Black")){
+			color=Color.black;
 		}
 	}
 
