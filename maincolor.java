@@ -5,7 +5,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class Paint extends Applet implements ActionListener,MouseListener,MouseMotionListener{
-		JButton Red, Blue , Gray , Violet , DarkViolet , Cyan , Teal ,Orange , Brown, Black , Yellow , Lavender ,  Magenta , DarkRed , DarkBlue , Lightgreen , green;
+		JButton Red, Blue , Gray , Violet , DarkViolet , Cyan , Teal ,Orange , Brown, Black , Yellow , Lavender ,  Magenta , DarkRed , DarkBlue , LightGreen , green;
 		Color color;
 		String DrawMode = ""
 	public void init(){	
@@ -74,11 +74,11 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	    DarkBlue.addActionListener(this);
 		CommandPanel.add(DarkBlue);
 		
-		Lightgreen=new JButton();
-		Lightgreen.setBackground(new Color(0,255,51));
-		Lightgreen.setActionCommand("Lightgreen");
-	    Lightgreen.addActionListener(this);
-		CommandPanel.add(Lightgreen);
+		LightGreen=new JButton();
+		LightGreen.setBackground(new Color(0,255,51));
+		LightGreen.setActionCommand("LightGreen");
+	    LightGreen.addActionListener(this);
+		CommandPanel.add(LightGreen);
 		
 		Green=new JButton();
 		Green.setBackground(Color.green);	
@@ -150,7 +150,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			if(DrawMode.equals("DarkBlue")){
 			color=Color.new Color(0,0,204);
 		}
-		if(DrawMode.equals("Lightgreen")){
+		if(DrawMode.equals("LightGreen")){
 			color=Color.new Color(0,255,51);
 		}
 		if(DrawMode.equals("Green")){
