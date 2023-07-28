@@ -22,7 +22,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.setBackground(new Color(223,234,246,255));
 		
 		JPanel Draw=new JPanel();
-		Draw.setBounds(320,10,1100,700);
+		Draw.setBounds(200,10,1280,700);
 		add(Draw,BorderLayout.CENTER);
 		Panel Background=new Panel();
 		Background.setBackground(new Color(202,212,227,255));
@@ -91,14 +91,21 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Brown=new JButton();
 		Brown.setBackground(new Color(165,42,42));
 		Brown.setActionCommand("Brown");
-	  Brown.addActionListener(this);
+		Brown.addActionListener(this);
 		CommandPanel.add(Brown);
 		
 		Wheat=new JButton();
 		Wheat.setBackground(new Color(245,222,179));
 		Wheat.setActionCommand("Wheat");
-	  Wheat.addActionListener(this);
+		Wheat.addActionListener(this);
 		CommandPanel.add(Wheat);
+		
+		Cyan=new JButton();
+		Cyan.setBackground(Color.cyan);	
+		Cyan.setActionCommand("Cyan");
+		Cyan.addActionListener(this);
+		CommandPanel.add(Cyan);
+
 		
 		Blue=new JButton();
 		Blue.setBackground(Color.blue);
@@ -109,27 +116,22 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		DarkBlue=new JButton();
 		DarkBlue.setBackground(new Color(0,0,204));
 		DarkBlue.setActionCommand("DarkBlue");
-	   DarkBlue.addActionListener(this);
+		DarkBlue.addActionListener(this);
 		CommandPanel.add(DarkBlue);
 		
-		Cyan=new JButton();
-		Cyan.setBackground(Color.cyan);	
-		Cyan.setActionCommand("Cyan");
-		Cyan.addActionListener(this);
-		CommandPanel.add(Cyan);
+		Yellow=new JButton();
+		Yellow.setBackground(Color.yellow);	
+		Yellow.setActionCommand("Yellow");
+		Yellow.addActionListener(this);
+		CommandPanel.add(Yellow);
+		
 		
 		Orange=new JButton();
 		Orange.setBackground(Color.orange);	
 		Orange.setActionCommand("Orange");
 		Orange.addActionListener(this);
 		CommandPanel.add(Orange);
-		
-		Yellow=new JButton();
-		Yellow.setBackground(Color.yellow);	
-		Yellow.setActionCommand("Yellow");
-	   Yellow.addActionListener(this);
-		CommandPanel.add(Yellow);
-		
+
 		Magenta=new JButton();
 		Magenta.setBackground(Color.magenta);	
 		Magenta.setActionCommand("Magenta");
@@ -139,26 +141,52 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Pink=new JButton();
 		Pink.setBackground(new Color(255,105,180));
 		Pink.setActionCommand("Pink");
-	  Pink.addActionListener(this);
+		Pink.addActionListener(this);
 		CommandPanel.add(Pink);
 		
 		
 		Lavender=new JButton();
 		Lavender.setBackground(new Color(230,230,250));
 		Lavender.setActionCommand("Lavender");
-	  Lavender.addActionListener(this);
+		Lavender.addActionListener(this);
 		CommandPanel.add(Lavender);
+		Pink.addActionListener(this);
+		CommandPanel.add(Pink);
+		
+		LightGreen=new JButton();
+		LightGreen.setBackground(new Color(0,255,51));
+		LightGreen.setActionCommand("LightGreen");
+		LightGreen.addActionListener(this);
+		CommandPanel.add(LightGreen);
+		
+		Green=new JButton();
+		Green.setBackground(Color.green);	
+		Green.setActionCommand("Green");
+		Green.addActionListener(this);
+		CommandPanel.add(Green);
+		
+		Teal=new JButton();
+		Teal.setBackground(new Color(0,128,128));
+		Teal.setActionCommand("Teal");
+		Teal.addActionListener(this);
+		CommandPanel.add(Teal);
+		
+		Olive=new JButton();
+		Olive.setBackground(new Color(128,128,0));
+		Olive.setActionCommand("Olive");
+		Olive.addActionListener(this);
+		CommandPanel.add(Olive);
 		
 		Violet=new JButton();
 		Violet.setBackground(new Color(138,43,226));
 		Violet.setActionCommand("Violet");
-	  Violet.addActionListener(this);
+		Violet.addActionListener(this);
 		CommandPanel.add(Violet);
 		
 		DarkViolet=new JButton();
 		DarkViolet.setBackground(new Color(75,0,130));
 		DarkViolet.setActionCommand("DarkViolet");
-	  DarkViolet.addActionListener(this);
+		DarkViolet.addActionListener(this);
 		CommandPanel.add(DarkViolet);
 		
 		Black=new JButton();
@@ -172,33 +200,6 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		Gray.setActionCommand("Gray");
 		Gray.addActionListener(this);
 		CommandPanel.add(Gray);
-		
-		
-		LightGreen=new JButton();
-		LightGreen.setBackground(new Color(0,255,51));
-		LightGreen.setActionCommand("LightGreen");
-	   LightGreen.addActionListener(this);
-		CommandPanel.add(LightGreen);
-		
-		Green=new JButton();
-		Green.setBackground(Color.green);	
-		Green.setActionCommand("Green");
-		Green.addActionListener(this);
-		CommandPanel.add(Green);
-		
-		Olive=new JButton();
-		Olive.setBackground(new Color(128,128,0));
-		Olive.setActionCommand("Olive");
-	  Olive.addActionListener(this);
-		CommandPanel.add(Olive);
-		
-		
-		Teal=new JButton();
-		Teal.setBackground(new Color(0,128,128));
-		Teal.setActionCommand("Teal");
-	  Teal.addActionListener(this);
-		CommandPanel.add(Teal);
-		
 	
 		add(BorderLayout.WEST,CommandPanel);
 		
