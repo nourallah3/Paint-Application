@@ -6,7 +6,7 @@ import javax.swing.event.*;
 
 public class Paint extends Applet implements ActionListener,MouseListener,MouseMotionListener{
 	String DrawMode="";
-	JButton DrawLine;
+	JButton DrawLine,DrawRect;
 	Color color;
 	Checkbox Fill;
 	Point FirstPoint = new Point(0,0);
@@ -22,6 +22,12 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		DrawLine.setActionCommand("LineD");
 		DrawLine.addActionListener(this);
 		CommandPanel.add(DrawLine);
+		
+		DrawRect=new JButton(new ImageIcon("Photos\\rectangle.png"));
+		DrawRect.setBackground(c1);
+		DrawRect.setActionCommand("RectD");
+		DrawRect.addActionListener(this);
+		CommandPanel.add(DrawRect);
 		
 		add(BorderLayout.WEST,CommandPanel);
 		
