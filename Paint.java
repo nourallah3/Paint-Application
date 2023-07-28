@@ -67,6 +67,13 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	public void mouseMoved(MouseEvent e){}
 	public void mouseClicked(MouseEvent e){}
 	
+	private Point getTopLeft(){
+		Point TopLeft = new Point();
+		TopLeft.x=Math.min(FirstPoint.x , SecondPoint.x);
+		TopLeft.y=Math.min(FirstPoint.y , SecondPoint.y);
+		return TopLeft;
+	}
+	
 	public void mousePressed(MouseEvent e){
 		FirstPoint.setLocation(0,0);
 		SecondPoint.setLocation(0,0);
@@ -143,6 +150,55 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 			SecondPoint.setLocation(e.getX(),e.getY());
 			paint(getGraphics());
 		}
+		if (DrawMode.compareTo("LineD") == 0 && Fill.getState() == true ){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				g.drawLine(FirstPoint.x,FirstPoint.y,SecondPoint.x,SecondPoint.y);
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
+		if (DrawMode.compareTo("RectD") == 0 && Fill.getState() == true){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawRect(TopLeft.x ,TopLeft.y ,width ,height );
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
+		if (DrawMode.compareTo("RectRD") == 0 && Fill.getState() == true){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
+		if (DrawMode.compareTo("CircleD") == 0 && Fill.getState() == true ){
+			Graphics g=getGraphics();
+			if (SecondPoint.x !=0 && SecondPoint.y !=0){
+				g.setColor(color);
+				g.setXORMode(getBackground());
+				Point TopLeft=getTopLeft();
+				int width=Math.abs(SecondPoint.x - FirstPoint.x);
+				int height=Math.abs(SecondPoint.y - FirstPoint.y);
+				g.drawOval(TopLeft.x ,TopLeft.y ,width ,height );
+			}
+			SecondPoint.setLocation(e.getX(),e.getY());
+			paint(g);
+		}
 	}
 	public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
@@ -179,6 +235,29 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 				g.setColor(Color.WHITE);
 				g.fillRect(FirstPoint.x,FirstPoint.y,10,10);
 				break;
+			if (Fill.getState() == true){
+				switch(DrawMode){
+				case "RectD":
+					Point TopLeft=getTopLeft();
+					int width=Math.abs(SecondPoint.x - FirstPoint.x);
+					int height=Math.abs(SecondPoint.y - FirstPoint.y);
+					g.fillRect(TopLeft.x ,TopLeft.y ,width ,height );
+					break;
+				case "RectRD":
+					TopLeft=getTopLeft();
+					width=Math.abs(SecondPoint.x - FirstPoint.x);
+					height=Math.abs(SecondPoint.y - FirstPoint.y);
+					g.fillRoundRect(TopLeft.x ,TopLeft.y ,width ,height,20,20 );
+					break;	
+				case "CircleD":
+					TopLeft=getTopLeft();
+					width=Math.abs(SecondPoint.x-FirstPoint.x);
+					height=Math.abs(SecondPoint.y-FirstPoint.y);
+					g.fillOval(TopLeft.x,TopLeft.y,width,height);
+				break;
+				
+			}
+		}
 		}
 	}			
 }
