@@ -55,7 +55,6 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		
 		Clear=new JButton(new ImageIcon("Photos\\delete.png"));
 		Clear.setBackground(c1)
-		Clear.setActionCommand("Clear");
 		Clear.addActionListener(this);
 		CommandPanel.add(Clear);
 		
@@ -209,7 +208,13 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 	public void actionPerformed(ActionEvent e){
 		DrawMode = e.getActionCommand();
 		Graphics g = getGraphics();
+		if (e.getSource() == Clear){
+			g.setColor(Color.white);
+			g.fillRect(0,0,getSize().width,getSize().height);
+			color=Color.black;
+			repaint();
 		}
+	}
 	public void paint(Graphics g){
 		g.setColor(color);
 		switch(DrawMode){
