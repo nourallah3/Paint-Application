@@ -22,7 +22,7 @@ public class Paint extends Applet implements ActionListener,MouseListener,MouseM
 		CommandPanel.setBackground(new Color(223,234,246,255));
 		
 		JPanel Draw=new JPanel();
-		Draw.setBounds(200,10,1280,700);
+		Draw.setBounds(320,10,1100,700);
 		add(Draw,BorderLayout.CENTER);
 		Panel Background=new Panel();
 		Background.setBackground(new Color(202,212,227,255));
